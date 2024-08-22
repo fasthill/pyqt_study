@@ -25,15 +25,23 @@ class MyWindow(QMainWindow):
     def btn1_clicked(self):
         print("before loop exec")
         self.event_loop.exec_()
-        # self.event_loop.exec_()
+        # self.event_loop.exit()
         print("after loop exec")
 
     def btn2_clicked(self):
         print("before loop exit")
         self.event_loop.exit()
         print("after loop exit")
-        time.sleep(5)
+        i = 1
+        while True:
+            time.sleep(1)
+            print("..", end="")
+            i = i + 1
+            if i > 5:
+                break
         print("after time sleep")
+        aa = self.btn3_clicked()
+        print(aa)
 
     def btn3_clicked(self):
         print("button3 clicked event")
